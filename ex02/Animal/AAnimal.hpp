@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   AAnimalA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:07:58 by aerrfig           #+#    #+#             */
-/*   Updated: 2025/01/13 10:04:22 by aerrfig          ###   ########.fr       */
+/*   Updated: 2025/01/13 11:32:47 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
-#include "Animal.hpp"
+#include <iostream>
 
-class Dog : public Animal
+class AAnimal
 {
+protected:
+std::string type;
 public:
-    Dog();
-    Dog(Dog const &src);
-    void makeSound() const;
-    ~Dog();
-    Dog &operator=(Dog const &rhs);
+	AAnimal();
+	AAnimal(AAnimal const &src);
+	std::string getType() const;
+	virtual ~AAnimal();
+	virtual void makeSound() const = 0;
+	AAnimal &operator=(AAnimal const &rhs);
 };
 
 #endif

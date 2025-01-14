@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 11:07:58 by aerrfig           #+#    #+#             */
-/*   Updated: 2025/01/13 10:04:22 by aerrfig          ###   ########.fr       */
+/*   Updated: 2025/01/14 13:39:02 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
 
-#include <iostream>
+#include "../Animal/Animal.hpp"
+#include "../Brain/Brain.hpp"
 
-class Animal
+class Dog : public Animal
 {
-protected:
-std::string type;
+private:
+    Brain *brains;
 public:
-	Animal();
-	Animal(Animal const &src);
-	std::string getType() const;
-	~Animal();
-	virtual void makeSound() const;
-
-	Animal &operator=(Animal const &rhs);
+    Dog();
+    Dog(Dog const &src);
+    void makeSound() const;
+    Brain *getBrain() const;
+    ~Dog();
+    Dog& operator=(const Dog &src);
 };
 
 #endif

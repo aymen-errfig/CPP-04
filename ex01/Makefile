@@ -6,15 +6,15 @@
 #    By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/05 15:42:11 by aerrfig           #+#    #+#              #
-#    Updated: 2025/01/14 14:29:08 by aerrfig          ###   ########.fr        #
+#    Updated: 2025/01/14 14:33:14 by aerrfig          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Animals
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
 CP = c++
-srcs = Animal/Animal.cpp Cat/Cat.cpp Dog/Dog.cpp Animal/WrongAnimal.cpp Cat/WrongCat.cpp Dog/WrongDog.cpp main.cpp
-heads = Animal/Animal.hpp Cat/Cat.hpp Dog/Dog.hpp Animal/WrongAnimal.hpp Cat/WrongCat.hpp Dog/WrongDog.hpp
+srcs = Animal/Animal.cpp Animal/WrongAnimal.cpp Brain/Brain.cpp Cat/Cat.cpp Cat/WrongCat.cpp Dog/Dog.cpp Dog/WrongDog.cpp main.cpp
+heads = Animal/Animal.hpp Animal/WrongAnimal.hpp Brain/Brain.hpp Cat/Cat.hpp Cat/WrongCat.hpp Dog/Dog.hpp Dog/WrongDog.hpp
 objs = ${srcs:.cpp=.o}
 RM = rm -f
 

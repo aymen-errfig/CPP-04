@@ -6,44 +6,40 @@
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 09:54:31 by aerrfig           #+#    #+#             */
-/*   Updated: 2025/01/13 12:20:08 by aerrfig          ###   ########.fr       */
+/*   Updated: 2025/01/14 15:20:21 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal/Animal.hpp"
+#include "Animal/AAnimal.hpp"
 #include "Dog/Dog.hpp"
 #include "Cat/Cat.hpp"
-#include "Animal/WrongAnimal.hpp"
-#include "Cat/WrongCat.hpp"
-#include "Dog/WrongDog.hpp"
 
 int main()
 {
+    const int arraySize = 30;
+    AAnimal *animals[arraySize];
 
-    const Animal *meta = new Animal();
-    Animal *j = new Dog();
-    const Animal *i = new Cat();
+    for (int i = 0; i < arraySize; ++i)
+    {
+        if (i % 2 == 0)
+        {
+            animals[i] = new Dog();
+        }
+        else
+        {
+            animals[i] = new Cat();
+        }
+    }
 
-    std::cout << j->getType() << " makes sound: ";
-    j->makeSound();
+    for (int i = 0; i < arraySize; ++i)
+    {
+        animals[i]->makeSound();
+    }
 
-    std::cout << i->getType() << " makes sound: ";
-    i->makeSound();
+    for (int i = 0; i < arraySize; ++i)
+    {
+        delete animals[i];
+    }
 
-    std::cout << meta->getType() << " makes sound: ";
-    meta->makeSound();
-
-    const WrongAnimal *wrongMeta = new WrongAnimal();
-    const WrongAnimal *wrongCat = new WrongCat();
-
-    std::cout << wrongMeta->getType() << " makes sound: ";
-    wrongMeta->makeSound();
-
-    std::cout << wrongCat->getType() << " makes sound: ";
-    wrongCat->makeSound();
-
-    delete meta;
-    delete j;
-    delete i;
     return 0;
 }

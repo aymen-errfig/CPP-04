@@ -1,28 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aerrfig <aerrfig@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 11:07:58 by aerrfig           #+#    #+#             */
-/*   Updated: 2025/01/13 10:04:22 by aerrfig          ###   ########.fr       */
+/*   Created: 2025/01/09 11:07:55 by aerrfig           #+#    #+#             */
+/*   Updated: 2025/01/14 14:36:30 by aerrfig          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-#define CAT_HPP
+#include "AAnimal.hpp"
 
-#include "Animal.hpp"
-
-class Cat : public Animal
+AAnimal::AAnimal()
 {
-public:
-    Cat();
-    Cat(Cat const &src);
-    void makeSound() const;
-    ~Cat();
-    Cat &operator=(Cat const &rhs);
-};
+	type = "No Type";
+	std::cout << "AAnimal Constructor Called\n";
+}
 
-#endif
+AAnimal::AAnimal(const AAnimal &src)
+{
+	this->type = src.type;
+}
+
+AAnimal::~AAnimal()
+{
+	std::cout << "AAnimal Destructor Called\n";
+}
+
+std::string AAnimal::getType() const
+{
+	return (this->type);
+}
+
+AAnimal &AAnimal::operator=(AAnimal const &rhs)
+{
+	this->type = rhs.type;
+	return *this;
+}
