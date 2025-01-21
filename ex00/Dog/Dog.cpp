@@ -18,7 +18,7 @@ Dog::Dog()
 	std::cout << "Dog Constructor Called\n";
 }
 
-Dog::Dog(const Dog &src)
+Dog::Dog(const Dog &src) : Animal()
 {
 	this->type = src.type;
 }

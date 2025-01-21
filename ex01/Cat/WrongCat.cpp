@@ -18,7 +18,7 @@ WrongCat::WrongCat()
 	std::cout << "WrongCat Constructor Called\n";
 }
 
-WrongCat::WrongCat(const WrongCat &src)
+WrongCat::WrongCat(const WrongCat &src) : WrongAnimal()
 {
 	this->type = src.type;
 }

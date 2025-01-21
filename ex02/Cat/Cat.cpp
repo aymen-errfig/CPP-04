@@ -20,7 +20,7 @@ Cat::Cat()
 	std::cout << "Cat Constructor Called\n";
 }
 
-Cat::Cat(const Cat &src)
+Cat::Cat(const Cat &src) : AAnimal()
 {
 	this->type = src.type;
 	this->brains = new Brain(*src.brains);

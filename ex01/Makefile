@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = Animals
-FLAGS = -Wall -Wextra -Werror -std=c++98 #-fsanitize=address -g
+FLAGS = -Wall -Wextra -Werror -std=c++98
 CP = c++
 srcs = Animal/Animal.cpp Animal/WrongAnimal.cpp Brain/Brain.cpp Cat/Cat.cpp Cat/WrongCat.cpp Dog/Dog.cpp Dog/WrongDog.cpp main.cpp
 heads = Animal/Animal.hpp Animal/WrongAnimal.hpp Brain/Brain.hpp Cat/Cat.hpp Cat/WrongCat.hpp Dog/Dog.hpp Dog/WrongDog.hpp

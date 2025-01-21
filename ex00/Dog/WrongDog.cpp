@@ -18,7 +18,7 @@ WrongDog::WrongDog()
 	std::cout << "WrongDog Constructor Called\n";
 }
 
-WrongDog::WrongDog(const WrongDog &src)
+WrongDog::WrongDog(const WrongDog &src) : WrongAnimal()
 {
 	this->type = src.type;
 }
